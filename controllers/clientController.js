@@ -112,7 +112,7 @@ const getClient = (request, response) => {
     });
   } else {
     clientDAO.findByUsername(username, function (err, rows) {
-      num = rows[0].num_client;
+      let num = rows[0].num_client;
       getClientByNumclient(num, function (err, rows_2) {
         console.log("test");
         console.log(rows_2[0]);
