@@ -10,7 +10,7 @@ const loginService = (typedUsername, typedPassword, callback) => {
     }
     if (rows.length == 0) {
       //the user is not in the DB
-      console.log("Unknown client, Please click to register");
+      console.log("New user, Please register");
       callback(null, false, null);
     } else {
       //check if password match...
@@ -22,10 +22,10 @@ const loginService = (typedUsername, typedPassword, callback) => {
         if (err2) {
           throw err2;
         } else if (!isMatch) {
-          console.log("Password doesn't match!");
+          console.log("Invalid Password!");
           callback(null, true, null);
         } else {
-          console.log("Password matches!");
+          console.log("Valid Password!");
           clientDAO.findByNumclient(num, function (err3, rows) {
             if (err3) {
               throw err3;
@@ -76,7 +76,9 @@ const registerService = (client, callback) => {
         }
       });
     } else {
-      console.log(`Username exists ${client.username}, ${rows[0].num_client}`);
+      console.log(
+        `Username already exists ${client.username}, ${rows[0].num_client}`
+      );
       callback(null, true, null);
     }
   });

@@ -15,6 +15,7 @@ app.get("/contacts", (req, res) => {
 // using JSON and URL Encoded middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 //session setup (secret key)
 app.use(
   session({
@@ -23,11 +24,11 @@ app.use(
     saveUninitialized: true
   })
 );
-//route for login
+//login route
 app.get("/login", (req, res) => {
   res.render("login");
 });
-//route for register
+//register route
 app.get("/register", (req, res) => {
   res.render("register");
 });
