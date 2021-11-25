@@ -9,8 +9,8 @@ This lab project primarily uses:
 * EJS Module
 	
 ## Setup
-To access the webpage:
+To access the webpage copy the link below:
 
 ```
-[Click here] (https://codesandbox.io/s/github/Ismailn13/Lab3)
+https://codesandbox.io/s/github/Ismailn13/Lab3
 ```
